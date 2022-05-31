@@ -1,4 +1,4 @@
-program lab5_pr;
+program proj;
 type
 massiv = array [1..100] of real;
 var
@@ -22,7 +22,7 @@ begin
   
 end;
 
-procedure lb5(n:integer; mas1,mas2,mas3:massiv);
+procedure proj(n:integer; mas1,mas2,mas3:massiv);
 var i,f:integer;
 min:real;
 begin
@@ -63,7 +63,7 @@ begin
   vvodmas(n, c);
   vivodmas(n, 1, a);
   vivodmas(n, 2, c);
-  lb5(n,a,c,m);
+  proj(n,a,c,m);
    close(inp);
   close(out);
 end.
