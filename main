@@ -1,0 +1,69 @@
+program lab5_pr;
+type
+massiv = array [1..100] of real;
+var
+out,inp: text;
+procedure vvodmas(n:integer; var mas:massiv);
+var i:integer;
+begin
+    for i:=1 to n do
+      read(inp,mas[i]);
+end;
+
+procedure vivodmas(n, num:integer; mas:massiv);
+var i:integer;
+begin
+
+    writeln(out,'Массив ',num, ':'); 
+    for i:=1 to n do
+      write(out,mas[i]:7:2);
+    writeln(out);
+
+  
+end;
+
+procedure lb5(n:integer; mas1,mas2,mas3:massiv);
+var i,f:integer;
+min:real;
+begin
+
+    for i:=1 to n do
+     mas3[i]:=sqr(mas1[i])-sqr(mas2[i]);
+  min:=mas3[1];
+  for i:=1 to n do
+     if mas3[i]<min then min:=mas3[i];
+  f:=0;
+  for i:=1 to n do
+    if (mas3[i]=min) and (f=0) then 
+      begin
+      write(out,'Наименьшее значение под номером ',i);
+      f:=f+1;
+      end;
+
+  
+end;
+
+
+var
+a,c,m: massiv;
+n,i,k,f:integer;
+s,x,y,L,min:real;
+begin
+  assign(inp,'lab51.txt');
+  assign(out,'lab52.txt');
+  reset(inp);
+  rewrite(out);
+  read(inp,n);
+  if (n<1) or (n>100) then 
+  begin
+    writeln(out, 'Ошибка: некорректное n');
+    exit;
+  end;
+  vvodmas(n, a);
+  vvodmas(n, c);
+  vivodmas(n, 1, a);
+  vivodmas(n, 2, c);
+  lb5(n,a,c,m);
+   close(inp);
+  close(out);
+end.
