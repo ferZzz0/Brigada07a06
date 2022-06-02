@@ -46,8 +46,7 @@ end;
 
 var
 a,c,m: massiv;
-n,i,k,f:integer;
-s,x,y,L,min:real;
+n:integer;
 begin
   assign(inp,'lab51.txt');
   assign(out,'lab52.txt');
