@@ -1,4 +1,4 @@
-program proj;
+program projj;
 type
 massiv = array [1..100] of real;
 var
